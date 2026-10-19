@@ -16,6 +16,18 @@ function fixture(t) {
   const request = { version: 1, role: 'solver', workspace, prompt: 'Read input.txt and answer.', harness: {}, provider: 'fixture', model: 'fixture-model', timeoutMs: 3000, maxSteps: 3 };
   return { root, workspace, request };
 }
+function mockedRuntimeEnv(t) {
+  // These transport tests replace spawn; they must not discover a real local
+  // installation or inherit a provider overlay from the developer's shell.
+  const root = realpathSync(mkdtempSync(join(tmpdir(), 'rdsh-harness2-mock-runtime-')));
+  const installation = join(root, 'dsh');
+  mkdirSync(join(installation, 'lib'), { recursive: true });
+  writeFileSync(join(installation, 'lib/bin.js'), 'throw new Error("mock spawn must intercept the runtime");\n');
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  const env = { ...process.env, RDSH_HARNESS2_BIN: join(root, 'rdsh'), RDSH_HARNESS2_DSH_PACKAGE: installation };
+  delete env.RDSH_HARNESS2_MODEL_PATCH;
+  return env;
+}
 const events = [{ type: 'session', sessionId: 'fixture' }, { type: 'status', phase: 'turn_end', reason: { kind: 'completed' } }, { type: 'final', text: 'OK' }];
 const jsonl = rows => rows.map(row => JSON.stringify(row)).join('\n') + '\n';
 test('request schema rejects unknown fields, executable paths, NUL, and oversized guidance', t => {
@@ -111,7 +123,7 @@ test('runner invokes native rdsh route, validates telemetry, and removes isolate
     const script = `require('node:fs').writeFileSync(${JSON.stringify(telemetry)},${JSON.stringify(JSON.stringify({version:1,provider:request.provider,model:request.model,calls:1,inflight:0,usage:emptyUsage(),trace:[],outcome:'completed',failure:null}))});process.stdout.write(${JSON.stringify(jsonl(events))});process.stdin.resume();`;
     return spawn(process.execPath, ['-e', script], options);
   };
-  const result = await runRequest(request, { env:{...process.env,DSH_TOOLS_MODE:'ptc'}, spawnImpl });
+  const result = await runRequest(request, { env:{...mockedRuntimeEnv(t),DSH_TOOLS_MODE:'ptc'}, spawnImpl });
   assert.equal(result.ok, true); assert.equal(result.text, 'OK');
   assert.match(seen.binary, /rdsh$/); assert.deepEqual(seen.args.slice(0, 4), ['--profile', 'harness2', '--from-default-profile', 'headless']);
   assert.deepEqual(seen.args.slice(-3), ['--', '--json', '-']); assert.ok(!seen.args.includes('--no-slim'));
@@ -126,7 +138,7 @@ test('failed child preserves observed usage and trace while reporting no success
     const state = {version:1,provider:request.provider,model:request.model,calls:1,inflight:0,usage:{...emptyUsage(),inputTokens:12,outputTokens:3},trace:[{type:'answer',text:'partial'}],outcome:'error',failure:null};
     return spawn(process.execPath, ['-e', `require('node:fs').writeFileSync(${JSON.stringify(telemetry)},${JSON.stringify(JSON.stringify(state))});process.stdout.write(${JSON.stringify(jsonl(events))});process.stdin.resume();process.exitCode=1;`], options);
   };
-  await assert.rejects(runRequest(request, { spawnImpl }), error => {
+  await assert.rejects(runRequest(request, { env: mockedRuntimeEnv(t), spawnImpl }), error => {
     assert.equal(error.result.ok, false); assert.equal(error.result.text, ''); assert.equal(error.result.usage.inputTokens, 12); assert.equal(error.result.trace.at(-1).type, 'error'); return true;
   });
 });
@@ -138,7 +150,7 @@ test('killing an active second call never reports completed first-call usage as 
     const state = {version:1,provider:request.provider,model:request.model,calls:2,inflight:1,usage:{inputTokens:12,outputTokens:3,cacheReadTokens:0,cacheWriteTokens:0},trace:[{type:'answer',text:'first call'}],outcome:null,failure:null};
     return spawn(process.execPath, ['-e', `require('node:fs').writeFileSync(${JSON.stringify(telemetry)},${JSON.stringify(JSON.stringify(state))});setInterval(()=>{},1000);`], options);
   };
-  await assert.rejects(runRequest(request, { spawnImpl }), error => {
+  await assert.rejects(runRequest(request, { env: mockedRuntimeEnv(t), spawnImpl }), error => {
     assert.equal(error.code, 'TIMEOUT'); assert.deepEqual(error.result.usage, emptyUsage()); assert.equal(error.result.trace[0].text, 'first call'); return true;
   });
 });
