@@ -1,0 +1,12 @@
+{
+  "files": {
+    "src/cache.mjs": "import { isExpired } from './expiry.mjs';\nexport function createCache({ capacity = 3, ttl = 1000, now = Date.now } = {}) {\n  if (!Number.isInteger(capacity) || capacity <= 0) throw new RangeError('capacity');\n  if (!Number.isFinite(ttl) || ttl < 0) throw new RangeError('ttl');\n  const entries = new Map();\n  const prune = () => {\n    for (const [key, entry] of entries) {\n      if (isExpired(entry, now())) entries.delete(key);\n    }\n  };\n  const promote = (key, entry) => {\n    entries.delete(key);\n    entries.set(key, entry);\n  };\n  return {\n    set(key, value) {\n      prune();\n      if (entries.has(key)) {\n        promote(key, { value, deadline: now() + ttl });\n        return;\n      }\n      if (entries.size >= capacity) entries.delete(entries.keys().next().value);\n      entries.set(key, { value, deadline: now() + ttl });\n    },\n    get(key) {\n      prune();\n      const entry = entries.get(key);\n      if (entry === undefined) return undefined;\n      promote(key, entry);\n      return entry.value;\n    },\n    has(key) {\n      prune();\n      return entries.has(key);\n    },\n    size() {\n      prune();\n      return entries.size;\n    },\n  };\n}\n",
+    "src/expiry.mjs": "export function isExpired(entry, timestamp) {\n  return timestamp >= entry.deadline;\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { createCache } from '../src/cache.mjs';\ntest('stores values and evicts oldest inserted key', () => {\n  const c = createCache({capacity: 2, ttl: 50, now: () => 0});\n  c.set('a', 1); c.set('b', 2); c.set('c', 3);\n  assert.equal(c.get('a'), undefined); assert.equal(c.get('b'), 2);\n});\ntest('deadline itself is expired', () => {\n  let time = 0; const c = createCache({capacity: 2, ttl: 5, now: () => time});\n  c.set('a', 1); time = 5; assert.equal(c.has('a'), false);\n});\n"
+  },
+  "changedPaths": [
+    "src/cache.mjs",
+    "src/expiry.mjs"
+  ],
+  "sha256": "0e59c03d7c25087d6cbc296fb8895cc713d50cf70348996cf16bc6e6ac251c9f"
+}

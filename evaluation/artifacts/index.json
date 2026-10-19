@@ -1,0 +1,799 @@
+{
+  "version": 1,
+  "purpose": "Source-only exports; no conversations, sessions, traces or credentials.",
+  "artifactCount": 66,
+  "entries": [
+    {
+      "id": "primary/round-01/bounded-map-settled/baseline",
+      "path": "primary/round-01/bounded-map-settled/baseline.json",
+      "fileSha256": "7b22db0bb142bc3f5ebb6d6fab86091552a5b4fb3159c56d26ebc1d761866933",
+      "declaredSourceSha256": "1ecd809c02edd23387d7376401ccd6ddefe66843ee61ec44b5422c861839b196",
+      "sourceFiles": [
+        "src/map-limit.mjs",
+        "src/run-item.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/bounded-map-settled/improved",
+      "path": "primary/round-01/bounded-map-settled/improved.json",
+      "fileSha256": "3668fedd0ae7ee1325d56cc406ec0b30bf3d25ac072d2c2bef4142647370ee44",
+      "declaredSourceSha256": "a206da9e1d342bf7c902cf679e3150663f94a84e6c5991fcd662bfd664d62c62",
+      "sourceFiles": [
+        "src/map-limit.mjs",
+        "src/run-item.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/csv-roundtrip/baseline",
+      "path": "primary/round-01/csv-roundtrip/baseline.json",
+      "fileSha256": "6db193f849ac2e39bebec6c6c111b802bade832e0f29886e3856cadcf0a8a6ae",
+      "declaredSourceSha256": "135b65aaf1c1ba74a75780ceb811c2e07cebe47179aa25aa3d68713fadfbf372",
+      "sourceFiles": [
+        "src/csv-field.mjs",
+        "src/csv.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/csv-roundtrip/improved",
+      "path": "primary/round-01/csv-roundtrip/improved.json",
+      "fileSha256": "cc5a436ebc0357ba7d4f673c10267bf4118c7cc6794061e9462b9f3095f64368",
+      "declaredSourceSha256": "097a1092b7d1d4b66353edd9d477560278c7cc37420050714a965229a3fa3fbb",
+      "sourceFiles": [
+        "src/csv-field.mjs",
+        "src/csv.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/dependency-schedule/baseline",
+      "path": "primary/round-01/dependency-schedule/baseline.json",
+      "fileSha256": "7da1ac70bd8183f08964a1181cd4bc1e31cbdc2f9974011ae85c570f20831a37",
+      "declaredSourceSha256": "1ea32ff4319ad4f7b73a37a543e8fa332bc68bde9acdba093f0d6b5e2a828f26",
+      "sourceFiles": [
+        "src/plan-build.mjs",
+        "src/validate-nodes.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/dependency-schedule/improved",
+      "path": "primary/round-01/dependency-schedule/improved.json",
+      "fileSha256": "e33e42e893b95487a180d3a8cf1341a42808261a3d239230ce62960dfd3b293b",
+      "declaredSourceSha256": "9695ab66d7f7b9d0b70a8b195ce051da68357524749e14c59fb829b538a57ab9",
+      "sourceFiles": [
+        "src/plan-build.mjs",
+        "src/validate-nodes.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/half-open-range-difference/baseline",
+      "path": "primary/round-01/half-open-range-difference/baseline.json",
+      "fileSha256": "a62ef8d3a10f60f9e4b2924071d528b42ebb017499a9ed033a63d8afbb68c5c3",
+      "declaredSourceSha256": "66e52d187dc59c8e9041f4c6b26386cc37f6243bdcc14ec6d9b0c88950996261",
+      "sourceFiles": [
+        "src/normalize-ranges.mjs",
+        "src/subtract-ranges.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/half-open-range-difference/improved",
+      "path": "primary/round-01/half-open-range-difference/improved.json",
+      "fileSha256": "37adef4a14b71656ef13a5e61d305222fee0d6a52d0f5c6691e15a9d6daf0b0a",
+      "declaredSourceSha256": "7b14fd72501fdc49e1a9cd462c65054dc967320ec15e6249a94191a2a436fc21",
+      "sourceFiles": [
+        "src/normalize-ranges.mjs",
+        "src/subtract-ranges.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/incremental-delimiter-framing/baseline",
+      "path": "primary/round-01/incremental-delimiter-framing/baseline.json",
+      "fileSha256": "e07e23c8fb335bb19acc8b959c76f8eb6d2e8bbbcccc134d48b2eefdfc177a9d",
+      "declaredSourceSha256": "14598946751cccf0af9a3e43a8fb76829d141c025191ca61e215ab0c94ecf35a",
+      "sourceFiles": [
+        "src/framer.mjs",
+        "src/split-frames.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/incremental-delimiter-framing/improved",
+      "path": "primary/round-01/incremental-delimiter-framing/improved.json",
+      "fileSha256": "3cff61e31cd24d3291653ed168a02715010489a3a4c46b20af3e9559f9253920",
+      "declaredSourceSha256": "0d8007154f78e4319f573476a7f58f16235d2395ce9a2389e6b68771b5d13ccb",
+      "sourceFiles": [
+        "src/framer.mjs",
+        "src/split-frames.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/layered-config-merge/baseline",
+      "path": "primary/round-01/layered-config-merge/baseline.json",
+      "fileSha256": "fe39d211bfc46b36b10da07678e9e27d14626169a54593bc5d22f7dbd5e90a59",
+      "declaredSourceSha256": "3dfc979723c8402d81aa035ef55366e0467b051616bc4ace81c7efeb94772b62",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/layered-config-merge/improved",
+      "path": "primary/round-01/layered-config-merge/improved.json",
+      "fileSha256": "fe39d211bfc46b36b10da07678e9e27d14626169a54593bc5d22f7dbd5e90a59",
+      "declaredSourceSha256": "3dfc979723c8402d81aa035ef55366e0467b051616bc4ace81c7efeb94772b62",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/paginated-records/baseline",
+      "path": "primary/round-01/paginated-records/baseline.json",
+      "fileSha256": "b1bd9f88d283549330c52e1f36a0cc0fd763ac059a5ece4f5b32972ee73684d0",
+      "declaredSourceSha256": "e86001fee90bcc578902066bc486504632e6c5623804affbd1bdcd7ed41aa3ed",
+      "sourceFiles": [
+        "src/collect-pages.mjs",
+        "src/merge-records.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/paginated-records/improved",
+      "path": "primary/round-01/paginated-records/improved.json",
+      "fileSha256": "3b1f7ba3d0ce24ceeed3f8f4712c2d43d03b562b27f9fc613bbc64b8cc1c946a",
+      "declaredSourceSha256": "2ed11df48781c500d3b0e8962c2767e860f5535df44dc8211dfc17fd4ae62915",
+      "sourceFiles": [
+        "src/collect-pages.mjs",
+        "src/merge-records.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/retry-backoff/baseline",
+      "path": "primary/round-01/retry-backoff/baseline.json",
+      "fileSha256": "e7d2f5b56730ad214e5b99ba84ad81c80f0e901fefabeff9895fbc209e1c0648",
+      "declaredSourceSha256": "32aeacfa4a4f9f91d433d760ebae140822341c061705cebc883402e55ede0913",
+      "sourceFiles": [
+        "src/retry-delay.mjs",
+        "src/retry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-01/retry-backoff/improved",
+      "path": "primary/round-01/retry-backoff/improved.json",
+      "fileSha256": "a5becb80b53ca4370da21c50870f3600a86ff52a5450d12ba0b075e39a42a6e2",
+      "declaredSourceSha256": "07060115ecdeaf6114f478e383173c511d17f7a686045affa12e25161c23ee95",
+      "sourceFiles": [
+        "src/retry-delay.mjs",
+        "src/retry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/bounded-map-settled/baseline",
+      "path": "primary/round-02/bounded-map-settled/baseline.json",
+      "fileSha256": "9d742b0f00f98139cae40f07929bf19d5a736da411b7c4652169a10f64906215",
+      "declaredSourceSha256": "2b4fc5bb691de425f4600f1f9fe2f694b47cf8f2f9e085780152a4c8a7a626bb",
+      "sourceFiles": [
+        "src/map-limit.mjs",
+        "src/run-item.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/bounded-map-settled/improved",
+      "path": "primary/round-02/bounded-map-settled/improved.json",
+      "fileSha256": "fa1650ceb4e65b03ae4a112081220e59db8877b425c06ecb5380e12d65fa473c",
+      "declaredSourceSha256": "a5e2a9a57a9c5f0f86a287c752e271c5b85d1071c5ddc105e5ec752dcf7739dc",
+      "sourceFiles": [
+        "src/map-limit.mjs",
+        "src/run-item.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/csv-roundtrip/baseline",
+      "path": "primary/round-02/csv-roundtrip/baseline.json",
+      "fileSha256": "d0cfcafdbe34bd18bbe014b11f3a3b325bb5e718c31d8dc45096e253a3c89c2d",
+      "declaredSourceSha256": "4f011cfedc51c35e800f65c314df46ecce5ed5fb88d65cac9778bd3ec5de01ed",
+      "sourceFiles": [
+        "src/csv-field.mjs",
+        "src/csv.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/csv-roundtrip/improved",
+      "path": "primary/round-02/csv-roundtrip/improved.json",
+      "fileSha256": "37fc023b9ae498240815f4704e1214a1c776dbfa1818045eca8b8c6885f491d3",
+      "declaredSourceSha256": "1d3407126e7c79a10f549297d1d64a819f80aa2adecc1958fc7e3d4344d54b29",
+      "sourceFiles": [
+        "src/csv-field.mjs",
+        "src/csv.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/dependency-schedule/baseline",
+      "path": "primary/round-02/dependency-schedule/baseline.json",
+      "fileSha256": "3b93955a8b523c0d9c2266489d6d1c61a6db630ee6d0dfaa757ebdd2de24f23c",
+      "declaredSourceSha256": "b02bd666c8dbb9a138c1ee474a404c78bc99f936f64d23f921bd6b5659e74b3f",
+      "sourceFiles": [
+        "src/plan-build.mjs",
+        "src/validate-nodes.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/dependency-schedule/improved",
+      "path": "primary/round-02/dependency-schedule/improved.json",
+      "fileSha256": "77fcb6cc3bcf7e206408309172ee80f22d6fda5ab1a03566fd40e4aab9892c46",
+      "declaredSourceSha256": "e49db86727dda0419b87a07d92ad6fd02dae7d0dd02f664cb7d79d04e4bb7332",
+      "sourceFiles": [
+        "src/plan-build.mjs",
+        "src/validate-nodes.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/half-open-range-difference/baseline",
+      "path": "primary/round-02/half-open-range-difference/baseline.json",
+      "fileSha256": "95d5fb666f3b85b166a439cf23956e2cac65600c9ac0cbaf1a4cb8e6cbaccea4",
+      "declaredSourceSha256": "b651c16ace0b5fed36e224aaf3f04522c0e8fc377dc6b81566beda35404ad510",
+      "sourceFiles": [
+        "src/normalize-ranges.mjs",
+        "src/subtract-ranges.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/half-open-range-difference/improved",
+      "path": "primary/round-02/half-open-range-difference/improved.json",
+      "fileSha256": "cc67cf3bea3f62b9c2908cb6185419a4eedff3328bd4269ee20d43cc4285bb44",
+      "declaredSourceSha256": "56b50ea118a9af71e087183ef0d69e9961efa9828f6bbda98c7c2fd8cf4cb983",
+      "sourceFiles": [
+        "src/normalize-ranges.mjs",
+        "src/subtract-ranges.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/incremental-delimiter-framing/baseline",
+      "path": "primary/round-02/incremental-delimiter-framing/baseline.json",
+      "fileSha256": "08ceaee6bf6d64cea9ee902afce643ddd14b7b67f577e4a23decda4fa7d501f5",
+      "declaredSourceSha256": "32bb8292f33a8b2eab1aaa2f5afb12fad287f0f4e9bd268cd8b812a7a74d86e6",
+      "sourceFiles": [
+        "src/framer.mjs",
+        "src/split-frames.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/incremental-delimiter-framing/improved",
+      "path": "primary/round-02/incremental-delimiter-framing/improved.json",
+      "fileSha256": "3cff61e31cd24d3291653ed168a02715010489a3a4c46b20af3e9559f9253920",
+      "declaredSourceSha256": "0d8007154f78e4319f573476a7f58f16235d2395ce9a2389e6b68771b5d13ccb",
+      "sourceFiles": [
+        "src/framer.mjs",
+        "src/split-frames.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/layered-config-merge/baseline",
+      "path": "primary/round-02/layered-config-merge/baseline.json",
+      "fileSha256": "918e571299027aa5dbb5d6def9b67a4d2bcd0dc8a1576ba0cc28c68b59818574",
+      "declaredSourceSha256": "ea1a4dd774935f56eb6734ebe04fae0dd71ce02db964ecdda12e1ca67ac2b362",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/layered-config-merge/improved",
+      "path": "primary/round-02/layered-config-merge/improved.json",
+      "fileSha256": "8856452fa7947f4e8a3e48c313c8baff5a0f8986103286422ace634206827378",
+      "declaredSourceSha256": "7ec883a623c7a8c04567fb8de2580b10e2aeb5e5f46aed37365e12e57e07e566",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/paginated-records/baseline",
+      "path": "primary/round-02/paginated-records/baseline.json",
+      "fileSha256": "c7e4723e670ee22d8db6f17d9dabba53a149c3654df0023f90e057ddbc280196",
+      "declaredSourceSha256": "349fd51bb1bc2637c144eca4dd38ae826dc231dc82e3cb5d643f91ad09d9d3d7",
+      "sourceFiles": [
+        "src/collect-pages.mjs",
+        "src/merge-records.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/paginated-records/improved",
+      "path": "primary/round-02/paginated-records/improved.json",
+      "fileSha256": "0f9d9cf92f685c28f880da2004704f40d3320a10f4f5967240a90553b213c538",
+      "declaredSourceSha256": "7684bf56598cde2436fcad60b26b6450454d912eeae39747269bcf1255f99ce5",
+      "sourceFiles": [
+        "src/collect-pages.mjs",
+        "src/merge-records.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/retry-backoff/baseline",
+      "path": "primary/round-02/retry-backoff/baseline.json",
+      "fileSha256": "f72984395391a4772c1ba5612c6db6588ab7dc4d6db92b106acb73c461fceae8",
+      "declaredSourceSha256": "40c45c351d846428be6c4ce41645a833aa9a75dfdf0e39ff0863e01c8439f2e6",
+      "sourceFiles": [
+        "src/retry-delay.mjs",
+        "src/retry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-02/retry-backoff/improved",
+      "path": "primary/round-02/retry-backoff/improved.json",
+      "fileSha256": "f576b973dab05166b29972521404c008fce76803ade4bb1cf51094065818f2e6",
+      "declaredSourceSha256": "300cb26e2845a423cea71a52a4f27a6ca88d236049a273d3af2c31fe2f956957",
+      "sourceFiles": [
+        "src/retry-delay.mjs",
+        "src/retry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/bounded-map-settled/baseline",
+      "path": "primary/round-03/bounded-map-settled/baseline.json",
+      "fileSha256": "551b446e65a5329018dada7481aef78a259c33b7fe68f259dcfd8c51769c59b1",
+      "declaredSourceSha256": "9812b622e298b58b08f287c95d46423d0def3198b31873aa2b5b1b5c3ba6cee0",
+      "sourceFiles": [
+        "src/map-limit.mjs",
+        "src/run-item.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/bounded-map-settled/improved",
+      "path": "primary/round-03/bounded-map-settled/improved.json",
+      "fileSha256": "58d6fb25eda66855daee2c86666c424230717555c5babf35d42214bd69ecadeb",
+      "declaredSourceSha256": "29db7bd5f757443fb47a0f8cff2171a3ca3710156a87ac5c0abbfec1daa5c378",
+      "sourceFiles": [
+        "src/map-limit.mjs",
+        "src/run-item.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/csv-roundtrip/baseline",
+      "path": "primary/round-03/csv-roundtrip/baseline.json",
+      "fileSha256": "51e4e8bcf0944103f136b145adb90d03e1cb5b7034235ec516606e9887b63405",
+      "declaredSourceSha256": "2ff583f1b2183f554897ad4fd3ef70c5fddf3bd46ca62be60ddbf97bc0fdc0bd",
+      "sourceFiles": [
+        "src/csv-field.mjs",
+        "src/csv.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/csv-roundtrip/improved",
+      "path": "primary/round-03/csv-roundtrip/improved.json",
+      "fileSha256": "0eebeece51d05788fd603bbb29a8053d904effdd4cad7fdd38388633d09d5869",
+      "declaredSourceSha256": "6b427b1b6625a4e8d334c8d992eab5a190965f86090bd01bdba00c2a25a1ed20",
+      "sourceFiles": [
+        "src/csv-field.mjs",
+        "src/csv.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/dependency-schedule/baseline",
+      "path": "primary/round-03/dependency-schedule/baseline.json",
+      "fileSha256": "dabcfc480a493f0c61f544c2c25c84a0892ddf85d4d41e724a4a1c9a821883b8",
+      "declaredSourceSha256": "8e9b3e17bb8113f21915666ecb93cdd386657045e6f173866f6838391da0fa6a",
+      "sourceFiles": [
+        "src/plan-build.mjs",
+        "src/validate-nodes.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/dependency-schedule/improved",
+      "path": "primary/round-03/dependency-schedule/improved.json",
+      "fileSha256": "c9da571167ee3e414f3602b07c49c0c76aca47223996580d49ab95a033ccff5c",
+      "declaredSourceSha256": "0b6046a5c4283153aa040b5bfc05001dc14083d7967f0684d77b458fbbfced26",
+      "sourceFiles": [
+        "src/plan-build.mjs",
+        "src/validate-nodes.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/half-open-range-difference/baseline",
+      "path": "primary/round-03/half-open-range-difference/baseline.json",
+      "fileSha256": "20dc11b748a6a09534f14ffb4d2799e75288417db24e50fdc08aa135c0ca4a6c",
+      "declaredSourceSha256": "3802d3cd149e256007f282b8a49b8be221dfa381385f566d12f7a8c4a696df44",
+      "sourceFiles": [
+        "src/normalize-ranges.mjs",
+        "src/subtract-ranges.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/half-open-range-difference/improved",
+      "path": "primary/round-03/half-open-range-difference/improved.json",
+      "fileSha256": "15515c5d250fb88012390bc967c0106ea3ab20755a178bda4f8349c1204d5f75",
+      "declaredSourceSha256": "5705d61a4d060c2e42018f035977a846ba851cbcf1e15b350785d72cf464dd5d",
+      "sourceFiles": [
+        "src/normalize-ranges.mjs",
+        "src/subtract-ranges.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/incremental-delimiter-framing/baseline",
+      "path": "primary/round-03/incremental-delimiter-framing/baseline.json",
+      "fileSha256": "3cff61e31cd24d3291653ed168a02715010489a3a4c46b20af3e9559f9253920",
+      "declaredSourceSha256": "0d8007154f78e4319f573476a7f58f16235d2395ce9a2389e6b68771b5d13ccb",
+      "sourceFiles": [
+        "src/framer.mjs",
+        "src/split-frames.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/incremental-delimiter-framing/improved",
+      "path": "primary/round-03/incremental-delimiter-framing/improved.json",
+      "fileSha256": "13a439573afc738e534b15e452fdfa9bcbcc6599505f6990332a61c10dbabcd9",
+      "declaredSourceSha256": "9af7fdec47a0cc8950b3175dc9c593d84fecc55de3ae5bd5859552cfb184abbf",
+      "sourceFiles": [
+        "src/framer.mjs",
+        "src/split-frames.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/layered-config-merge/baseline",
+      "path": "primary/round-03/layered-config-merge/baseline.json",
+      "fileSha256": "038d3c7496b11a66c78f8dc5b4ea9d8ee85ee996eb34760354ac8d21a948b591",
+      "declaredSourceSha256": "0eda91716847fb403e20fe5ae4750ab7f5e5fb2d452cb036eaa3b42b1a4219c6",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/layered-config-merge/improved",
+      "path": "primary/round-03/layered-config-merge/improved.json",
+      "fileSha256": "fc4dba44aa0421c7c490eaa2e823a2a8925027305aa4a3a1d0e042f03a971974",
+      "declaredSourceSha256": "40415a9932efc571f8d8ff9423b99f76f25f2d784844d7b1ec9c13fa87ba4b49",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/paginated-records/baseline",
+      "path": "primary/round-03/paginated-records/baseline.json",
+      "fileSha256": "220d9de280536b2c91f7e2bfae2c8e3bfdcae9e3c8a794da086aeb634845a587",
+      "declaredSourceSha256": "1f7d9608ef8384e4ed991cd948a3f5fa5be29ada2a930d2758aeaff0173513b8",
+      "sourceFiles": [
+        "src/collect-pages.mjs",
+        "src/merge-records.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/paginated-records/improved",
+      "path": "primary/round-03/paginated-records/improved.json",
+      "fileSha256": "220d9de280536b2c91f7e2bfae2c8e3bfdcae9e3c8a794da086aeb634845a587",
+      "declaredSourceSha256": "1f7d9608ef8384e4ed991cd948a3f5fa5be29ada2a930d2758aeaff0173513b8",
+      "sourceFiles": [
+        "src/collect-pages.mjs",
+        "src/merge-records.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/retry-backoff/baseline",
+      "path": "primary/round-03/retry-backoff/baseline.json",
+      "fileSha256": "e7d2f5b56730ad214e5b99ba84ad81c80f0e901fefabeff9895fbc209e1c0648",
+      "declaredSourceSha256": "32aeacfa4a4f9f91d433d760ebae140822341c061705cebc883402e55ede0913",
+      "sourceFiles": [
+        "src/retry-delay.mjs",
+        "src/retry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "primary/round-03/retry-backoff/improved",
+      "path": "primary/round-03/retry-backoff/improved.json",
+      "fileSha256": "a98763ffc0dc46c3a6f12736a9c1e3a75a3dbcd2e65778080b041a81210faac2",
+      "declaredSourceSha256": "130c621e58f4bab7012a855416c21ab8e6b6b790184345f4102efc4775561f37",
+      "sourceFiles": [
+        "src/retry-delay.mjs",
+        "src/retry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "supplement/round-01/layered-config-merge/baseline",
+      "path": "supplement/round-01/layered-config-merge/baseline.json",
+      "fileSha256": "fe39d211bfc46b36b10da07678e9e27d14626169a54593bc5d22f7dbd5e90a59",
+      "declaredSourceSha256": "3dfc979723c8402d81aa035ef55366e0467b051616bc4ace81c7efeb94772b62",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "supplement/round-01/layered-config-merge/improved",
+      "path": "supplement/round-01/layered-config-merge/improved.json",
+      "fileSha256": "fe39d211bfc46b36b10da07678e9e27d14626169a54593bc5d22f7dbd5e90a59",
+      "declaredSourceSha256": "3dfc979723c8402d81aa035ef55366e0467b051616bc4ace81c7efeb94772b62",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "supplement/round-02/layered-config-merge/baseline",
+      "path": "supplement/round-02/layered-config-merge/baseline.json",
+      "fileSha256": "fe39d211bfc46b36b10da07678e9e27d14626169a54593bc5d22f7dbd5e90a59",
+      "declaredSourceSha256": "3dfc979723c8402d81aa035ef55366e0467b051616bc4ace81c7efeb94772b62",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "supplement/round-02/layered-config-merge/improved",
+      "path": "supplement/round-02/layered-config-merge/improved.json",
+      "fileSha256": "fe39d211bfc46b36b10da07678e9e27d14626169a54593bc5d22f7dbd5e90a59",
+      "declaredSourceSha256": "3dfc979723c8402d81aa035ef55366e0467b051616bc4ace81c7efeb94772b62",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "supplement/round-03/layered-config-merge/baseline",
+      "path": "supplement/round-03/layered-config-merge/baseline.json",
+      "fileSha256": "b79a12e58d2679d42c4a2ed7c92b57bf0c20ef1800ec8abaa918ce91a4013837",
+      "declaredSourceSha256": "994572cb680594d63f7b74bf761a425725aefa51547a8199db2b777bcb8f56b6",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "supplement/round-03/layered-config-merge/improved",
+      "path": "supplement/round-03/layered-config-merge/improved.json",
+      "fileSha256": "89786478aa56b81fac15e47c4baf113502ca899b8ebf6d42cc1d418f44261036",
+      "declaredSourceSha256": "dcf0b5995cee48a3c3afd9d12bb49639386f77e241af6896618eebb430706012",
+      "sourceFiles": [
+        "src/clone-value.mjs",
+        "src/merge-layers.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-01/ttl-lru-cache-agg1",
+      "path": "training/round-01/ttl-lru-cache-agg1.json",
+      "fileSha256": "7422b33684a1a7f79a71d92a5fdd589c9b015db1d4e57b353a4062764e8dbfc1",
+      "declaredSourceSha256": "2b2ae992e23912403b230c41ad5f9f7934c9a24ed6fe6537c572a5e77218a2bd",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-01/ttl-lru-cache-base",
+      "path": "training/round-01/ttl-lru-cache-base.json",
+      "fileSha256": "1605d36e110be0ed3d41bd30d3e752dc28818f7c3602516f79b631221ebf2d6e",
+      "declaredSourceSha256": "d8bcb8481a22d98b98778c0a6e86d6793b674eff4a8b25b50b77d44b4163dc30",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-01/ttl-lru-cache-dom1",
+      "path": "training/round-01/ttl-lru-cache-dom1.json",
+      "fileSha256": "0ca83bb229f40c78dc9ce7b913c22357b04d394e58f0bb2a8ed86d4a63d735d2",
+      "declaredSourceSha256": "4fc56eb912fc5aff300e9f95b472a0192e2fae1cdf4fc821377255b2588bc3dd",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-01/ttl-lru-cache-inv1",
+      "path": "training/round-01/ttl-lru-cache-inv1.json",
+      "fileSha256": "6f0c72d64077323f18e66771c83e1517792e725d90411ab9e73cea4922cecdb5",
+      "declaredSourceSha256": "1cb6248e0c0e16a03b74afda3a0ad2e80371bcb56171a1431cc71927077f4df7",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-02/ttl-lru-cache-agg1",
+      "path": "training/round-02/ttl-lru-cache-agg1.json",
+      "fileSha256": "1df63daab3695a927462385f46d294b13073f2e99afbff17a0737a2e0cc5044f",
+      "declaredSourceSha256": "489dfd7908f7d6c8d9638e3ff6c23d0ab66812c604d537403435128203c66ca0",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-02/ttl-lru-cache-base",
+      "path": "training/round-02/ttl-lru-cache-base.json",
+      "fileSha256": "5101c607a70bd4e9468316a41f94c7b9536ea5b3616a4a48521ea628b0a74d1e",
+      "declaredSourceSha256": "008eab8ca8648bf0f9dd4c59c7ba20f9d8098615dbd1c130fd138f7ea2c13591",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-02/ttl-lru-cache-dom1",
+      "path": "training/round-02/ttl-lru-cache-dom1.json",
+      "fileSha256": "2f4f058cfbe0f0a5bae255b40343ed71aa2e3c8522e3a7d90a89c7c27d715c56",
+      "declaredSourceSha256": "63a780fc9918864b1148bd625db496c53144cdb6c0b002b2cd28fbd4cb5eea6e",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-02/ttl-lru-cache-inv1",
+      "path": "training/round-02/ttl-lru-cache-inv1.json",
+      "fileSha256": "6f0c72d64077323f18e66771c83e1517792e725d90411ab9e73cea4922cecdb5",
+      "declaredSourceSha256": "1cb6248e0c0e16a03b74afda3a0ad2e80371bcb56171a1431cc71927077f4df7",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-03/ttl-lru-cache-agg1",
+      "path": "training/round-03/ttl-lru-cache-agg1.json",
+      "fileSha256": "32eb93a4eb850c260056fc344777ccde8a439ba86b5d4bdc953df28d09b0a138",
+      "declaredSourceSha256": "0f7edcd251ddfc2927fc55f344e6f863bceb98cb5737e4db8b5d5b8d2f51887c",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-03/ttl-lru-cache-base",
+      "path": "training/round-03/ttl-lru-cache-base.json",
+      "fileSha256": "6f0c72d64077323f18e66771c83e1517792e725d90411ab9e73cea4922cecdb5",
+      "declaredSourceSha256": "1cb6248e0c0e16a03b74afda3a0ad2e80371bcb56171a1431cc71927077f4df7",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-03/ttl-lru-cache-dom1",
+      "path": "training/round-03/ttl-lru-cache-dom1.json",
+      "fileSha256": "48b9ea0b88dc867836977a9a4c4ba70e5d79b8fe99bc34fbae1d9e1e604af0aa",
+      "declaredSourceSha256": "f5f8b933f6a52be702395546e8205554a89d93d3bc30b9cbf07d144f337b2dab",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    },
+    {
+      "id": "training/round-03/ttl-lru-cache-inv1",
+      "path": "training/round-03/ttl-lru-cache-inv1.json",
+      "fileSha256": "7c8edf8d66b77d22025b3432318c8fe347008498f874e38ae310711590f39b0e",
+      "declaredSourceSha256": "0e59c03d7c25087d6cbc296fb8895cc713d50cf70348996cf16bc6e6ac251c9f",
+      "sourceFiles": [
+        "src/cache.mjs",
+        "src/expiry.mjs",
+        "test/public.test.mjs"
+      ],
+      "reviewedForTampering": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "files": {
+    "src/retry-delay.mjs": "export function retryDelay(attempt, { baseDelay = 10, maxDelay = 1000 } = {}) {\n  return Math.min(maxDelay, baseDelay * attempt);\n}\n",
+    "src/retry.mjs": "import { retryDelay } from './retry-delay.mjs';\nexport async function runWithRetry(operation, { maxAttempts = 3, baseDelay = 10, maxDelay = 1000, shouldRetry = () => true, sleep = async () => {} } = {}) {\n  for (let attempt = 1; attempt <= maxAttempts; attempt++) {\n    try { return await operation(attempt); }\n    catch (reason) {\n      if (attempt === maxAttempts || !shouldRetry(reason, attempt)) throw reason;\n      sleep(retryDelay(attempt, { baseDelay, maxDelay }), attempt + 1);\n    }\n  }\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { runWithRetry } from '../src/retry.mjs';\ntest('a transient failure succeeds on second attempt',async()=>{let calls=0;assert.equal(await runWithRetry(()=>{if(++calls===1)throw 'again';return 'ok';}),'ok');assert.equal(calls,2);});\ntest('asynchronous false decision terminates retries',async()=>{const reason={stop:true};let calls=0;await assert.rejects(runWithRetry(()=>{calls++;throw reason;},{shouldRetry:async()=>false}),e=>e===reason);assert.equal(calls,1);});\n"
+  },
+  "changedPaths": [],
+  "sha256": "32aeacfa4a4f9f91d433d760ebae140822341c061705cebc883402e55ede0913"
+}

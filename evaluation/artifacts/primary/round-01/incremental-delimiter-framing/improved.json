@@ -1,0 +1,9 @@
+{
+  "files": {
+    "src/framer.mjs": "import { splitFrames } from './split-frames.mjs';\nexport function createFramer({delimiter='\\r\\n',maxBuffer=1024}={}) {\n  let pending='';\n  return {\n    push(chunk){pending+=chunk;const out=splitFrames(pending,delimiter);pending=out.rest;return out.frames;},\n    finish(){return pending?[pending]:[];},\n  };\n}\n",
+    "src/split-frames.mjs": "export function splitFrames(text, delimiter) {\n  const parts=text.split(delimiter);\n  return {frames:parts.slice(0,-1),rest:parts.at(-1)};\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { createFramer } from '../src/framer.mjs';\ntest('splits ordinary lines across chunks',()=>{const f=createFramer();assert.deepEqual(f.push('one\\r'),[]);assert.deepEqual(f.push('\\ntwo\\r\\n'),['one','two']);assert.deepEqual(f.finish(),[]);});\ntest('rejects an oversized complete frame',()=>{const f=createFramer({delimiter:'|',maxBuffer:2});assert.throws(()=>f.push('long|'),RangeError);});\n"
+  },
+  "changedPaths": [],
+  "sha256": "0d8007154f78e4319f573476a7f58f16235d2395ce9a2389e6b68771b5d13ccb"
+}

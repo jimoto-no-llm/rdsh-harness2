@@ -1,0 +1,9 @@
+{
+  "files": {
+    "src/csv-field.mjs": "export function encodeCsvField(value) {\n  return value.replaceAll('\"', '\"\"');\n}\n",
+    "src/csv.mjs": "import { encodeCsvField } from './csv-field.mjs';\nexport function parseCsv(text) {\n  if (text === '') return [];\n  return text.split('\\n').map(line => line.split(','));\n}\nexport function serializeCsv(rows) {\n  return rows.map(row => row.map(encodeCsvField).join(',')).join('\\r\\n');\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { parseCsv, serializeCsv } from '../src/csv.mjs';\ntest('simple one-record values',()=>{assert.deepEqual(parseCsv('a,b'),[['a','b']]);assert.equal(serializeCsv([['a','b']]),'a,b');});\ntest('quoted comma and doubled quote fields',()=>{assert.deepEqual(parseCsv('\"a,b\",\"say \"\"hi\"\"\"'),[['a,b','say \"hi\"']]);});\n"
+  },
+  "changedPaths": [],
+  "sha256": "135b65aaf1c1ba74a75780ceb811c2e07cebe47179aa25aa3d68713fadfbf372"
+}

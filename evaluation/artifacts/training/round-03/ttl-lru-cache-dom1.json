@@ -1,0 +1,12 @@
+{
+  "files": {
+    "src/cache.mjs": "import { isExpired } from './expiry.mjs';\nexport function createCache({ capacity = 3, ttl = 1000, now = Date.now } = {}) {\n  const entries = new Map();\n  const prune = () => {\n    for (const [key, entry] of entries) {\n      if (isExpired(entry, now())) entries.delete(key);\n    }\n  };\n  return {\n    set(key, value) {\n      prune();\n      const existed = entries.has(key);\n      if (!existed && entries.size >= capacity) entries.delete(entries.keys().next().value);\n      if (existed) entries.delete(key);\n      entries.set(key, { value, deadline: now() + ttl });\n    },\n    get(key) {\n      prune();\n      const entry = entries.get(key);\n      if (entry === undefined) return undefined;\n      entries.delete(key);\n      entries.set(key, entry);\n      return entry.value;\n    },\n    has(key) { prune(); return entries.has(key); },\n    size() { prune(); return entries.size; },\n  };\n}\n",
+    "src/expiry.mjs": "export function isExpired(entry, timestamp) {\n  return timestamp >= entry.deadline;\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { createCache } from '../src/cache.mjs';\ntest('stores values and evicts oldest inserted key', () => {\n  const c = createCache({capacity: 2, ttl: 50, now: () => 0});\n  c.set('a', 1); c.set('b', 2); c.set('c', 3);\n  assert.equal(c.get('a'), undefined); assert.equal(c.get('b'), 2);\n});\ntest('deadline itself is expired', () => {\n  let time = 0; const c = createCache({capacity: 2, ttl: 5, now: () => time});\n  c.set('a', 1); time = 5; assert.equal(c.has('a'), false);\n});\n"
+  },
+  "changedPaths": [
+    "src/cache.mjs",
+    "src/expiry.mjs"
+  ],
+  "sha256": "f5f8b933f6a52be702395546e8205554a89d93d3bc30b9cbf07d144f337b2dab"
+}

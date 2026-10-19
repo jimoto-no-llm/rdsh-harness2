@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "provenance": "Three nonfallback aggregate harnesses; training stages did not all succeed. Synthetic Markdown only.",
+  "rounds": [
+    {
+      "round": 1,
+      "sourceSha256": "4e18a5967066a2faedee9a4d7abd2a5e8a08f0977a70f8d57d0d9c16e3180e52",
+      "files": {
+        "skills/js-cache-repair/SKILL.md": "c7c23bf5044400d58b403b620bc2c0865a8f0b56547c7a1b29ab9fd4485a8946",
+        "systemprompt.md": "0a889bc31361dd01063441d6b1fa052cc656c82a0aa094d3e99cb6edd70ab989",
+        "tool-guidance.md": "c3f00c6119ec9b1806b11a1b04275f49de4ded634042f637d80c24a17cf8fae4"
+      },
+      "adaptationComplete": false
+    },
+    {
+      "round": 2,
+      "sourceSha256": "419a6d42500e88e438ec510a317f71c5edfb6dc02eb650074fea34933cb1b12d",
+      "files": {
+        "skills/js-ttl-lru-repair/SKILL.md": "8f5fe205eaae0daf9fd2ba2624e9e5752f5c3be3031e43cb5d57356141ca0711",
+        "systemprompt.md": "827861b69df910e4eee5e680e7f9654f661866a1e07230032c68db63ea419c8c",
+        "tool-guidance.md": "e354c90897a9b8c36f7d76344c2f345097104d9987ecf67fe9ddfc337a7d6fa4"
+      },
+      "adaptationComplete": false
+    },
+    {
+      "round": 3,
+      "sourceSha256": "30a8768f6fc592bac8dd035eb12a464d45fdd1b466dc319b869312612530acac",
+      "files": {
+        "skills/js-ttl-lru-cache-repair/SKILL.md": "eab929124cefd4a92db94ce75ee826a31d3296578255cc97bb4421c703d443e3",
+        "systemprompt.md": "299e41a431061405bc8bfb9a7a56d5e45d855201728743df820b66b8b82aecb6",
+        "tool-guidance.md": "d638674a793a12a7a30f2f5212bba33238e0d33dcc58b71e2b1f0aa254115788"
+      },
+      "adaptationComplete": false
+    }
+  ]
+}

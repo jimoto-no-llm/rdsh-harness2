@@ -1,0 +1,9 @@
+{
+  "files": {
+    "src/plan-build.mjs": "import { validateNodes } from './validate-nodes.mjs';\nexport function planBuild(nodes) {\n  validateNodes(nodes);\n  const result = [];\n  const visiting = new Set();\n  function visit(node) {\n    if (result.includes(node.id)) return;\n    if (visiting.has(node.id)) return;\n    visiting.add(node.id);\n    for (const id of node.dependsOn || []) {\n      const dependency = nodes.find(candidate => candidate.id === id);\n      if (dependency) visit(dependency);\n    }\n    visiting.delete(node.id);\n    result.push(node.id);\n  }\n  for (const node of nodes) visit(node);\n  return result;\n}\n",
+    "src/validate-nodes.mjs": "export function validateNodes(nodes) {\n  if (!Array.isArray(nodes)) throw new TypeError('nodes must be an array');\n  return nodes;\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { planBuild } from '../src/plan-build.mjs';\ntest('schedules a linear dependency chain',()=>{assert.deepEqual(planBuild([{id:'bundle',dependsOn:['compile']},{id:'compile',dependsOn:['parse']},{id:'parse'}]),['parse','compile','bundle']);});\ntest('reports missing dependencies',()=>{assert.throws(()=>planBuild([{id:'a',dependsOn:['missing']}]),/missing/i);});\n"
+  },
+  "changedPaths": [],
+  "sha256": "8e9b3e17bb8113f21915666ecb93cdd386657045e6f173866f6838391da0fa6a"
+}

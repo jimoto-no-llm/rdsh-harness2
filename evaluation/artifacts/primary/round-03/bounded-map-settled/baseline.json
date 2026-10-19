@@ -1,0 +1,12 @@
+{
+  "files": {
+    "src/map-limit.mjs": "import { runItem } from './run-item.mjs';\n\nexport async function mapLimit(items, limit, mapper) {\n  if (!Array.isArray(items)) {\n    throw new TypeError('items must be an array');\n  }\n  if (typeof mapper !== 'function') {\n    throw new TypeError('mapper must be a function');\n  }\n  if (!Number.isInteger(limit) || limit < 1) {\n    throw new RangeError('limit must be a positive integer');\n  }\n  if (items.length === 0) {\n    return [];\n  }\n\n  const results = new Array(items.length);\n  let nextIndex = 0;\n\n  async function worker() {\n    while (true) {\n      const index = nextIndex++;\n      if (index >= items.length) {\n        break;\n      }\n      results[index] = await runItem(mapper, items[index], index);\n    }\n  }\n\n  const workerCount = Math.min(limit, items.length);\n  await Promise.all(Array.from({ length: workerCount }, () => worker()));\n  return results;\n}\n",
+    "src/run-item.mjs": "export async function runItem(mapper, value, index) {\n  try {\n    const mapped = await mapper(value, index);\n    return { status: 'fulfilled', value: mapped };\n  } catch (reason) {\n    return { status: 'rejected', reason };\n  }\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { mapLimit } from '../src/map-limit.mjs';\ntest('maps ordinary values',async()=>{assert.deepEqual(await mapLimit([1,2],2,x=>x*2),[{status:'fulfilled',value:2},{status:'fulfilled',value:4}]);});\ntest('mapper errors are per-item results',async()=>{const failure=new Error('failed');const out=await mapLimit([0,1],1,x=>{if(x===0)throw failure;return x;});assert.equal(out[0].reason,failure);assert.equal(out[1].value,1);});\n"
+  },
+  "changedPaths": [
+    "src/map-limit.mjs",
+    "src/run-item.mjs"
+  ],
+  "sha256": "9812b622e298b58b08f287c95d46423d0def3198b31873aa2b5b1b5c3ba6cee0"
+}

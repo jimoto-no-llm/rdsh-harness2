@@ -1,0 +1,65 @@
+{
+  "name": "rdsh-harness2",
+  "version": "0.1.0-alpha.1",
+  "type": "module",
+  "license": "MIT",
+  "description": "Experimental Harness\u00b2 adapter and reproducible evaluation for native rdsh",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "index.mjs",
+    "runner.mjs",
+    "validation.mjs",
+    "cordis.patch.yml",
+    "python/*.py",
+    "python/README.md",
+    "python/tests/*.py",
+    "evaluation/*.json",
+    "test/*.mjs",
+    "README.md",
+    "evaluation/*.md",
+    "evaluation/*.mjs",
+    "coding-tools.mjs",
+    "source-policy.mjs",
+    "grade-coding.mjs",
+    "LICENSE",
+    "THIRD_PARTY.md",
+    "USAGE.md",
+    "analysis/*.py",
+    "analysis/*.mjs",
+    "analysis/README.md",
+    "analysis/tests/*.py",
+    "evaluation/artifacts/**",
+    "evaluation/harnesses/**",
+    "examples/*.json",
+    "CONTRIBUTING.md",
+    "analysis/fixtures/*.json",
+    "analysis/fixtures/*.mjs",
+    "docs/*.md"
+  ],
+  "exports": {
+    ".": "./index.mjs",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "dependencies": {
+    "acorn": "8.19.0"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jimoto-no-llm/rdsh-harness2.git"
+  },
+  "homepage": "https://github.com/jimoto-no-llm/rdsh-harness2#readme",
+  "bugs": {
+    "url": "https://github.com/jimoto-no-llm/rdsh-harness2/issues"
+  }
+}

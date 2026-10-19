@@ -1,0 +1,243 @@
+{
+  "classification": "POSTHOC_SOURCE_DERIVED",
+  "candidates": [
+    {
+      "index": 0,
+      "value": "\u0000__null__",
+      "origins": [
+        "known-cursor-boundary",
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 9
+    },
+    {
+      "index": 1,
+      "value": "\u0000null",
+      "origins": [
+        "known-cursor-boundary",
+        "round-2-baseline"
+      ],
+      "utf8Bytes": 5
+    },
+    {
+      "index": 2,
+      "value": "null",
+      "origins": [
+        "known-cursor-boundary"
+      ],
+      "utf8Bytes": 4
+    },
+    {
+      "index": 3,
+      "value": "[null]",
+      "origins": [
+        "known-cursor-boundary"
+      ],
+      "utf8Bytes": 6
+    },
+    {
+      "index": 4,
+      "value": "__null__",
+      "origins": [
+        "known-cursor-boundary"
+      ],
+      "utf8Bytes": 8
+    },
+    {
+      "index": 5,
+      "value": "\u0000__null__\u0000",
+      "origins": [
+        "known-cursor-boundary",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 10
+    },
+    {
+      "index": 6,
+      "value": "./merge-records.mjs",
+      "origins": [
+        "round-1-baseline",
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved",
+        "round-3-baseline",
+        "round-3-improved"
+      ],
+      "utf8Bytes": 19
+    },
+    {
+      "index": 7,
+      "value": "maxPages must be a positive integer",
+      "origins": [
+        "round-1-baseline",
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 35
+    },
+    {
+      "index": 8,
+      "value": "object",
+      "origins": [
+        "round-1-baseline",
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 6
+    },
+    {
+      "index": 9,
+      "value": "page must be an object with items and nextCursor",
+      "origins": [
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 48
+    },
+    {
+      "index": 10,
+      "value": "page.items must be an array",
+      "origins": [
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 27
+    },
+    {
+      "index": 11,
+      "value": "string",
+      "origins": [
+        "round-1-baseline",
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 6
+    },
+    {
+      "index": 12,
+      "value": "page.nextCursor must be a string or null",
+      "origins": [
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 40
+    },
+    {
+      "index": 13,
+      "value": "record must be a non-null object",
+      "origins": [
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 32
+    },
+    {
+      "index": 14,
+      "value": "number",
+      "origins": [
+        "round-1-baseline",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 6
+    },
+    {
+      "index": 15,
+      "value": "record id must be a string or finite number",
+      "origins": [
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 43
+    },
+    {
+      "index": 16,
+      "value": "repeated cursor detected",
+      "origins": [
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 24
+    },
+    {
+      "index": 17,
+      "value": "exceeded maxPages limit",
+      "origins": [
+        "round-1-baseline"
+      ],
+      "utf8Bytes": 23
+    },
+    {
+      "index": 18,
+      "value": "invalid page",
+      "origins": [
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 12
+    },
+    {
+      "index": 19,
+      "value": "invalid page items",
+      "origins": [
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 18
+    },
+    {
+      "index": 20,
+      "value": "invalid nextCursor",
+      "origins": [
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 18
+    },
+    {
+      "index": 21,
+      "value": "repeated cursor",
+      "origins": [
+        "round-1-improved",
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 15
+    },
+    {
+      "index": 22,
+      "value": "page limit exceeded",
+      "origins": [
+        "round-1-improved"
+      ],
+      "utf8Bytes": 19
+    },
+    {
+      "index": 23,
+      "value": "invalid record",
+      "origins": [
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 14
+    },
+    {
+      "index": 24,
+      "value": "invalid record id",
+      "origins": [
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 17
+    },
+    {
+      "index": 25,
+      "value": "page limit reached",
+      "origins": [
+        "round-2-baseline",
+        "round-2-improved"
+      ],
+      "utf8Bytes": 18
+    }
+  ]
+}

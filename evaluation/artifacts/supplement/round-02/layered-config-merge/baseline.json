@@ -1,0 +1,9 @@
+{
+  "files": {
+    "src/clone-value.mjs": "export function cloneValue(value) {\n  if(Array.isArray(value)) return [...value];\n  if(value && typeof value==='object') return {...value};\n  return value;\n}\n",
+    "src/merge-layers.mjs": "import { cloneValue } from './clone-value.mjs';\nexport const DELETE=Symbol('delete');\nexport function mergeLayers(...layers) {\n  const out={};\n  for(const layer of layers) if(layer) for(const key of Object.keys(layer)) out[key]=cloneValue(layer[key]);\n  return out;\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { mergeLayers } from '../src/merge-layers.mjs';\ntest('later scalar values replace earlier values',()=>assert.deepEqual(mergeLayers({a:1},{a:2,b:false}),{a:2,b:false}));\ntest('nested objects merge without losing earlier keys',()=>assert.deepEqual(mergeLayers({db:{host:'h',port:1}},{db:{port:2}}),{db:{host:'h',port:2}}));\n"
+  },
+  "changedPaths": [],
+  "sha256": "3dfc979723c8402d81aa035ef55366e0467b051616bc4ace81c7efeb94772b62"
+}

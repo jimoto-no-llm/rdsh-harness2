@@ -1,0 +1,10 @@
+[
+  {
+    "insert": [
+      {
+        "id": "rdsh-direct-models",
+        "name": "/absolute/path/to/rustdsh/plugins/rdsh-direct-models/index.mjs"
+      }
+    ]
+  }
+]

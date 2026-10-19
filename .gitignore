@@ -1,0 +1,12 @@
+node_modules/
+.venv/
+runs/
+.local/
+.env
+.env.*
+__pycache__/
+*.py[cod]
+*.tgz
+.DS_Store
+model.patch.json
+.rdsh-harness2-*/

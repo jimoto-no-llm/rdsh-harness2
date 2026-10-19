@@ -1,0 +1,9 @@
+{
+  "files": {
+    "src/collect-pages.mjs": "import { mergeRecords } from './merge-records.mjs';\nexport async function collectPages(fetchPage, { initialCursor = null, maxPages = 100 } = {}) {\n  let cursor = initialCursor;\n  const records = [];\n  for (let count = 0; count < maxPages; count++) {\n    const page = await fetchPage(cursor);\n    mergeRecords(records, page.items);\n    if (!page.nextCursor) return records;\n    cursor = page.nextCursor;\n  }\n  return records;\n}\n",
+    "src/merge-records.mjs": "export function mergeRecords(records, incoming) {\n  for (const record of incoming) {\n    const index = records.findIndex(old => String(old.id) === String(record.id));\n    if (index < 0) records.push(record);\n    else records[index] = { ...records[index], ...record };\n  }\n  return records;\n}\n",
+    "test/public.test.mjs": "import test from 'node:test';\nimport assert from 'node:assert/strict';\nimport { collectPages } from '../src/collect-pages.mjs';\ntest('collects two pages in order',async()=>{const result=await collectPages(async cursor=>cursor===null?{items:[{id:'a',n:1}],nextCursor:'b'}:{items:[{id:'b',n:2}],nextCursor:null});assert.deepEqual(result,[{id:'a',n:1},{id:'b',n:2}]);});\ntest('empty string is a valid next cursor',async()=>{const calls=[];await collectPages(async cursor=>{calls.push(cursor);return {items:[],nextCursor:cursor===null?'':null};});assert.deepEqual(calls,[null,'']);});\n"
+  },
+  "changedPaths": [],
+  "sha256": "1f7d9608ef8384e4ed991cd948a3f5fa5be29ada2a930d2758aeaff0173513b8"
+}
